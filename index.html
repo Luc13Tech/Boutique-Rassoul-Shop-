@@ -448,22 +448,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 50px;
-      color: var(--text-light);
+      font-size: 80px;
+      color: var(--primary);
       flex-shrink: 0;
       position: relative;
       overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .product-card:hover .product-image img {
-      transform: scale(1.05);
     }
 
     .product-details {
@@ -846,6 +835,7 @@
       }
       .product-image {
         height: 180px;
+        font-size: 60px;
       }
       .product-details {
         padding: 15px;
@@ -1080,307 +1070,64 @@
     { name: 'Marron', code: '#8B6B4D', border: '#4a3729' }
   ];
 
-  // ===== 27 PRODUITS AVEC 27 IMAGES UNIQUES =====
+  // ===== 27 PRODUITS AVEC ICÔNES =====
   const products = [
-    // HOMMES - BOUBOUS (3 images uniques)
-    { 
-      id: 1, 
-      name: 'Boubou homme brodé', 
-      category: 'Homme', 
-      subcategory: 'Boubou', 
-      price: 25000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774836/pexels-photo-3774836.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Boubou traditionnel avec broderies fines'
-    },
-    { 
-      id: 2, 
-      name: 'Boubou homme cérémonie', 
-      category: 'Homme', 
-      subcategory: 'Boubou', 
-      price: 35000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774837/pexels-photo-3774837.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Boubou de cérémonie avec motifs luxueux'
-    },
-    { 
-      id: 3, 
-      name: 'Grand boubou homme', 
-      category: 'Homme', 
-      subcategory: 'Boubou', 
-      price: 50000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774838/pexels-photo-3774838.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Grand boubou ample pour grandes occasions'
-    },
+    // HOMMES - BOUBOUS (icône t-shirt)
+    { id: 1, name: 'Boubou homme brodé', category: 'Homme', subcategory: 'Boubou', price: 25000, icon: 'fa-tshirt' },
+    { id: 2, name: 'Boubou homme cérémonie', category: 'Homme', subcategory: 'Boubou', price: 32000, icon: 'fa-tshirt' },
+    { id: 3, name: 'Grand boubou homme', category: 'Homme', subcategory: 'Boubou', price: 35000, icon: 'fa-tshirt' },
+    
+    // HOMMES - ENSEMBLES (icône user-tie)
+    { id: 4, name: 'Ensemble homme 3 pièces', category: 'Homme', subcategory: 'Ensemble', price: 28000, icon: 'fa-user-tie' },
+    { id: 5, name: 'Tenue africaine homme complète', category: 'Homme', subcategory: 'Ensemble', price: 30000, icon: 'fa-user-tie' },
+    
+    // HOMMES - JALABAS (icône t-shirt)
+    { id: 6, name: 'Jalaba homme', category: 'Homme', subcategory: 'Jalaba', price: 18000, icon: 'fa-tshirt' },
+    
+    // HOMMES - COSTUMES (icône user-tie)
+    { id: 7, name: 'Costume homme élégant', category: 'Homme', subcategory: 'Costume', price: 35000, icon: 'fa-user-tie' },
+    
+    // HOMMES - CHEMISES (icône t-shirt)
+    { id: 8, name: 'Chemise homme luxe', category: 'Homme', subcategory: 'Chemise', price: 9500, icon: 'fa-tshirt' },
+    
+    // HOMMES - PANTALONS (icône fa-shoe-prints)
+    { id: 9, name: 'Pantalon homme habillé', category: 'Homme', subcategory: 'Pantalon', price: 12500, icon: 'fa-shoe-prints' },
+    
+    // HOMMES - KAFTANS (icône t-shirt)
+    { id: 10, name: 'Kaftan homme', category: 'Homme', subcategory: 'Kaftan', price: 28000, icon: 'fa-tshirt' },
 
-    // HOMMES - ENSEMBLES (2 images uniques)
-    { 
-      id: 4, 
-      name: 'Ensemble homme 3 pièces', 
-      category: 'Homme', 
-      subcategory: 'Ensemble', 
-      price: 45000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774839/pexels-photo-3774839.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Ensemble complet : boubou, chemise, pantalon'
-    },
-    { 
-      id: 5, 
-      name: 'Tenue africaine homme complète', 
-      category: 'Homme', 
-      subcategory: 'Ensemble', 
-      price: 48000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774840/pexels-photo-3774840.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Tenue traditionnelle complète'
-    },
+    // FEMMES - ROBES (icône fa-fan pour femme)
+    { id: 11, name: 'Robe femme simple', category: 'Femme', subcategory: 'Robe', price: 6500, icon: 'fa-fan' },
+    { id: 12, name: 'Robe femme élégante', category: 'Femme', subcategory: 'Robe', price: 12000, icon: 'fa-fan' },
+    { id: 13, name: 'Robe africaine', category: 'Femme', subcategory: 'Robe', price: 22000, icon: 'fa-fan' },
+    
+    // FEMMES - ENSEMBLES (icône fa-fan)
+    { id: 14, name: 'Ensemble femme', category: 'Femme', subcategory: 'Ensemble', price: 15000, icon: 'fa-fan' },
+    { id: 15, name: 'Ensemble femme 2 pièces', category: 'Femme', subcategory: 'Ensemble', price: 18000, icon: 'fa-fan' },
+    { id: 16, name: 'Tenue africaine femme complète', category: 'Femme', subcategory: 'Ensemble', price: 28000, icon: 'fa-fan' },
+    
+    // FEMMES - BOUBOUS (icône fa-fan)
+    { id: 17, name: 'Boubou femme brodé', category: 'Femme', subcategory: 'Boubou', price: 20000, icon: 'fa-fan' },
+    { id: 18, name: 'Boubou femme cérémonie', category: 'Femme', subcategory: 'Boubou', price: 26000, icon: 'fa-fan' },
+    
+    // FEMMES - JALABAS (icône fa-fan)
+    { id: 19, name: 'Jalaba femme', category: 'Femme', subcategory: 'Jalaba', price: 16000, icon: 'fa-fan' },
+    
+    // FEMMES - CAFTANS (icône fa-fan)
+    { id: 20, name: 'Caftan femme', category: 'Femme', subcategory: 'Caftan', price: 24000, icon: 'fa-fan' },
 
-    // HOMMES - JALABAS (1 image unique)
-    { 
-      id: 6, 
-      name: 'Jalaba homme', 
-      category: 'Homme', 
-      subcategory: 'Jalaba', 
-      price: 22000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774841/pexels-photo-3774841.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Jalaba légère et élégante pour homme'
-    },
-
-    // HOMMES - COSTUMES (1 image unique)
-    { 
-      id: 7, 
-      name: 'Costume homme élégant', 
-      category: 'Homme', 
-      subcategory: 'Costume', 
-      price: 55000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774842/pexels-photo-3774842.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Costume moderne pour occasions spéciales'
-    },
-
-    // HOMMES - CHEMISES (1 image unique)
-    { 
-      id: 8, 
-      name: 'Chemise homme luxe', 
-      category: 'Homme', 
-      subcategory: 'Chemise', 
-      price: 12000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774843/pexels-photo-3774843.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Chemise en tissu haut de gamme'
-    },
-
-    // HOMMES - PANTALONS (1 image unique)
-    { 
-      id: 9, 
-      name: 'Pantalon homme habillé', 
-      category: 'Homme', 
-      subcategory: 'Pantalon', 
-      price: 15000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774844/pexels-photo-3774844.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Pantalon élégant pour toutes occasions'
-    },
-
-    // HOMMES - KAFTANS (1 image unique)
-    { 
-      id: 10, 
-      name: 'Kaftan homme', 
-      category: 'Homme', 
-      subcategory: 'Kaftan', 
-      price: 40000, 
-      icon: 'fa-user-tie',
-      image: 'https://images.pexels.com/photos/3774845/pexels-photo-3774845.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Kaftan traditionnel richement décoré'
-    },
-
-    // FEMMES - ROBES (3 images uniques)
-    { 
-      id: 11, 
-      name: 'Robe femme simple', 
-      category: 'Femme', 
-      subcategory: 'Robe', 
-      price: 5500, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774846/pexels-photo-3774846.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Robe légère et confortable'
-    },
-    { 
-      id: 12, 
-      name: 'Robe femme élégante', 
-      category: 'Femme', 
-      subcategory: 'Robe', 
-      price: 9000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774847/pexels-photo-3774847.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Robe chic pour soirées'
-    },
-    { 
-      id: 13, 
-      name: 'Robe africaine', 
-      category: 'Femme', 
-      subcategory: 'Robe', 
-      price: 30000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774848/pexels-photo-3774848.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Robe traditionnelle africaine'
-    },
-
-    // FEMMES - ENSEMBLES (3 images uniques)
-    { 
-      id: 14, 
-      name: 'Ensemble femme', 
-      category: 'Femme', 
-      subcategory: 'Ensemble', 
-      price: 10000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774849/pexels-photo-3774849.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Ensemble deux pièces élégant'
-    },
-    { 
-      id: 15, 
-      name: 'Ensemble femme 2 pièces', 
-      category: 'Femme', 
-      subcategory: 'Ensemble', 
-      price: 25000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774850/pexels-photo-3774850.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Ensemble moderne deux pièces'
-    },
-    { 
-      id: 16, 
-      name: 'Tenue africaine femme complète', 
-      category: 'Femme', 
-      subcategory: 'Ensemble', 
-      price: 38000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774851/pexels-photo-3774851.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Tenue traditionnelle complète'
-    },
-
-    // FEMMES - BOUBOUS (2 images uniques)
-    { 
-      id: 17, 
-      name: 'Boubou femme brodé', 
-      category: 'Femme', 
-      subcategory: 'Boubou', 
-      price: 28000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774852/pexels-photo-3774852.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Boubou femme avec broderies'
-    },
-    { 
-      id: 18, 
-      name: 'Boubou femme cérémonie', 
-      category: 'Femme', 
-      subcategory: 'Boubou', 
-      price: 35000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774853/pexels-photo-3774853.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Boubou de cérémonie luxueux'
-    },
-
-    // FEMMES - JALABAS (1 image unique)
-    { 
-      id: 19, 
-      name: 'Jalaba femme', 
-      category: 'Femme', 
-      subcategory: 'Jalaba', 
-      price: 22000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774854/pexels-photo-3774854.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Jalaba féminine élégante'
-    },
-
-    // FEMMES - CAFTANS (1 image unique)
-    { 
-      id: 20, 
-      name: 'Caftan femme', 
-      category: 'Femme', 
-      subcategory: 'Caftan', 
-      price: 32000, 
-      icon: 'fa-fan',
-      image: 'https://images.pexels.com/photos/3774855/pexels-photo-3774855.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Caftan luxueux pour femme'
-    },
-
-    // ENFANTS - BOUBOUS (2 images uniques)
-    { 
-      id: 21, 
-      name: 'Boubou enfant garçon', 
-      category: 'Enfant', 
-      subcategory: 'Boubou', 
-      price: 15000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774856/pexels-photo-3774856.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Boubou pour garçon'
-    },
-    { 
-      id: 22, 
-      name: 'Boubou enfant fille', 
-      category: 'Enfant', 
-      subcategory: 'Boubou', 
-      price: 15000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774857/pexels-photo-3774857.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Boubou pour fille'
-    },
-
-    // ENFANTS - JALABAS (2 images uniques)
-    { 
-      id: 23, 
-      name: 'Jallaba Enfant', 
-      category: 'Enfant', 
-      subcategory: 'Jalaba', 
-      price: 17000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774858/pexels-photo-3774858.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Jalaba pour enfant'
-    },
-    { 
-      id: 24, 
-      name: 'Jalaba enfant', 
-      category: 'Enfant', 
-      subcategory: 'Jalaba', 
-      price: 14000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774859/pexels-photo-3774859.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Jalaba légère pour enfant'
-    },
-
-    // ENFANTS - ENSEMBLES (3 images uniques)
-    { 
-      id: 25, 
-      name: 'Ensemble enfant', 
-      category: 'Enfant', 
-      subcategory: 'Ensemble', 
-      price: 18000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774860/pexels-photo-3774860.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Ensemble complet pour enfant'
-    },
-    { 
-      id: 26, 
-      name: 'Tenue enfant garçon', 
-      category: 'Enfant', 
-      subcategory: 'Ensemble', 
-      price: 16000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774861/pexels-photo-3774861.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Tenue traditionnelle pour garçon'
-    },
-    { 
-      id: 27, 
-      name: 'Tenue enfant fille', 
-      category: 'Enfant', 
-      subcategory: 'Ensemble', 
-      price: 16000, 
-      icon: 'fa-child',
-      image: 'https://images.pexels.com/photos/3774862/pexels-photo-3774862.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Tenue traditionnelle pour fille'
-    }
+    // ENFANTS - BOUBOUS (icône fa-child)
+    { id: 21, name: 'Boubou enfant garçon', category: 'Enfant', subcategory: 'Boubou', price: 11000, icon: 'fa-child' },
+    { id: 22, name: 'Boubou enfant fille', category: 'Enfant', subcategory: 'Boubou', price: 11000, icon: 'fa-child' },
+    
+    // ENFANTS - JALABAS (icône fa-child)
+    { id: 23, name: 'Jallaba Enfant', category: 'Enfant', subcategory: 'Jalaba', price: 14000, icon: 'fa-child' },
+    { id: 24, name: 'Jalaba enfant', category: 'Enfant', subcategory: 'Jalaba', price: 12000, icon: 'fa-child' },
+    
+    // ENFANTS - ENSEMBLES (icône fa-child)
+    { id: 25, name: 'Ensemble enfant', category: 'Enfant', subcategory: 'Ensemble', price: 15000, icon: 'fa-child' },
+    { id: 26, name: 'Tenue enfant garçon', category: 'Enfant', subcategory: 'Ensemble', price: 13000, icon: 'fa-child' },
+    { id: 27, name: 'Tenue enfant fille', category: 'Enfant', subcategory: 'Ensemble', price: 13000, icon: 'fa-child' }
   ];
 
   let cart = [];
@@ -1455,7 +1202,7 @@
       
       card.innerHTML = `
         <div class="product-image">
-          <img src="${p.image}" alt="${p.name}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          <i class="fas ${p.icon}" style="font-size: 80px; color: var(--primary);"></i>
         </div>
         <div class="product-details">
           <div class="product-category">${p.category} · ${p.subcategory || ''}</div>
