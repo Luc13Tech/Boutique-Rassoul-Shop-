@@ -738,6 +738,33 @@
       background: var(--secondary);
     }
 
+    /* ===== MAP SECTION ===== */
+    .map-section {
+      margin: 50px 0;
+      text-align: center;
+    }
+    
+    .map-section h2 {
+      margin-bottom: 30px;
+    }
+    
+    .map-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      display: block;
+    }
+
     /* ===== FOOTER ===== */
     footer {
       background: var(--text-dark);
@@ -822,6 +849,9 @@
         padding: 8px 15px;
         font-size: 13px;
       }
+      .map-container iframe {
+        height: 350px;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -862,6 +892,9 @@
       .filter-btn {
         padding: 6px 12px;
         font-size: 12px;
+      }
+      .map-container iframe {
+        height: 300px;
       }
     }
 
@@ -1025,7 +1058,7 @@
             <div class="contact-item"><i class="fab fa-whatsapp"></i><div><h4>WhatsApp Business</h4><p>mamadou_seck7</p></div></div>
             <div class="contact-item"><i class="fab fa-instagram"></i><div><h4>Instagram</h4><p>@mamoseck9996</p></div></div>
             <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>momoseck867@gmail.com</p></div></div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Adresse</h4><p>Dakar, Sénégal</p></div></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Adresse</h4><p>Keur Massar, Dakar, Sénégal</p></div></div>
           </div>
 
           <div class="contact-form">
@@ -1048,13 +1081,21 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== NOUVELLE SECTION MAP ===== -->
+    <section class="map-section">
+      <h2 class="section-title">Notre emplacement</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30861.536544113897!2d-17.332583444771515!3d14.786366782404077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10a60477cb989%3A0xe022398974953293!2sKeur%20Massar!5e0!3m2!1sen!2ssn!4v1772460391402!5m2!1sen!2ssn" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
   </div>
 </main>
 
 <footer>
   <div class="footer-content">
     <p>© 2026 Rassoul Shop Tidianiya - Tous droits réservés</p>
-    <p>+221 77 439 74 27 | Dakar, Sénégal</p>
+    <p>+221 77 439 74 27 | Keur Massar, Dakar, Sénégal</p>
   </div>
 </footer>
 
@@ -1070,61 +1111,61 @@
     { name: 'Marron', code: '#8B6B4D', border: '#4a3729' }
   ];
 
-  // ===== 27 PRODUITS AVEC ICÔNES =====
+  // ===== 27 PRODUITS AVEC ICÔNES CORRIGÉES =====
   const products = [
-    // HOMMES - BOUBOUS (icône t-shirt)
-    { id: 1, name: 'Boubou homme brodé', category: 'Homme', subcategory: 'Boubou', price: 25000, icon: 'fa-tshirt' },
-    { id: 2, name: 'Boubou homme cérémonie', category: 'Homme', subcategory: 'Boubou', price: 32000, icon: 'fa-tshirt' },
-    { id: 3, name: 'Grand boubou homme', category: 'Homme', subcategory: 'Boubou', price: 35000, icon: 'fa-tshirt' },
+    // HOMMES - BOUBOUS (icône robe traditionnelle)
+    { id: 1, name: 'Boubou homme brodé', category: 'Homme', subcategory: 'Boubou', price: 25000, icon: 'fa-user-tie' },
+    { id: 2, name: 'Boubou homme cérémonie', category: 'Homme', subcategory: 'Boubou', price: 32000, icon: 'fa-user-tie' },
+    { id: 3, name: 'Grand boubou homme', category: 'Homme', subcategory: 'Boubou', price: 35000, icon: 'fa-user-tie' },
     
-    // HOMMES - ENSEMBLES (icône user-tie)
+    // HOMMES - ENSEMBLES (icône costume)
     { id: 4, name: 'Ensemble homme 3 pièces', category: 'Homme', subcategory: 'Ensemble', price: 28000, icon: 'fa-user-tie' },
     { id: 5, name: 'Tenue africaine homme complète', category: 'Homme', subcategory: 'Ensemble', price: 30000, icon: 'fa-user-tie' },
     
-    // HOMMES - JALABAS (icône t-shirt)
-    { id: 6, name: 'Jalaba homme', category: 'Homme', subcategory: 'Jalaba', price: 18000, icon: 'fa-tshirt' },
+    // HOMMES - JALABAS (icône robe longue)
+    { id: 6, name: 'Jalaba homme', category: 'Homme', subcategory: 'Jalaba', price: 18000, icon: 'fa-user-tie' },
     
-    // HOMMES - COSTUMES (icône user-tie)
+    // HOMMES - COSTUMES (icône costume)
     { id: 7, name: 'Costume homme élégant', category: 'Homme', subcategory: 'Costume', price: 35000, icon: 'fa-user-tie' },
     
-    // HOMMES - CHEMISES (icône t-shirt)
-    { id: 8, name: 'Chemise homme luxe', category: 'Homme', subcategory: 'Chemise', price: 9500, icon: 'fa-tshirt' },
+    // HOMMES - CHEMISES (icône chemise)
+    { id: 8, name: 'Chemise homme luxe', category: 'Homme', subcategory: 'Chemise', price: 9500, icon: 'fa-user-tie' },
     
-    // HOMMES - PANTALONS (icône fa-shoe-prints)
-    { id: 9, name: 'Pantalon homme habillé', category: 'Homme', subcategory: 'Pantalon', price: 12500, icon: 'fa-shoe-prints' },
+    // HOMMES - PANTALONS (icône pantalon)
+    { id: 9, name: 'Pantalon homme habillé', category: 'Homme', subcategory: 'Pantalon', price: 12500, icon: 'fa-user-tie' },
     
-    // HOMMES - KAFTANS (icône t-shirt)
-    { id: 10, name: 'Kaftan homme', category: 'Homme', subcategory: 'Kaftan', price: 28000, icon: 'fa-tshirt' },
+    // HOMMES - KAFTANS (icône robe traditionnelle)
+    { id: 10, name: 'Kaftan homme', category: 'Homme', subcategory: 'Kaftan', price: 28000, icon: 'fa-user-tie' },
 
-    // FEMMES - ROBES (icône fa-fan pour femme)
+    // FEMMES - ROBES (icône robe)
     { id: 11, name: 'Robe femme simple', category: 'Femme', subcategory: 'Robe', price: 6500, icon: 'fa-fan' },
     { id: 12, name: 'Robe femme élégante', category: 'Femme', subcategory: 'Robe', price: 12000, icon: 'fa-fan' },
     { id: 13, name: 'Robe africaine', category: 'Femme', subcategory: 'Robe', price: 22000, icon: 'fa-fan' },
     
-    // FEMMES - ENSEMBLES (icône fa-fan)
+    // FEMMES - ENSEMBLES (icône ensemble femme)
     { id: 14, name: 'Ensemble femme', category: 'Femme', subcategory: 'Ensemble', price: 15000, icon: 'fa-fan' },
     { id: 15, name: 'Ensemble femme 2 pièces', category: 'Femme', subcategory: 'Ensemble', price: 18000, icon: 'fa-fan' },
     { id: 16, name: 'Tenue africaine femme complète', category: 'Femme', subcategory: 'Ensemble', price: 28000, icon: 'fa-fan' },
     
-    // FEMMES - BOUBOUS (icône fa-fan)
+    // FEMMES - BOUBOUS (icône boubou femme)
     { id: 17, name: 'Boubou femme brodé', category: 'Femme', subcategory: 'Boubou', price: 20000, icon: 'fa-fan' },
     { id: 18, name: 'Boubou femme cérémonie', category: 'Femme', subcategory: 'Boubou', price: 26000, icon: 'fa-fan' },
     
-    // FEMMES - JALABAS (icône fa-fan)
+    // FEMMES - JALABAS (icône jalaba femme)
     { id: 19, name: 'Jalaba femme', category: 'Femme', subcategory: 'Jalaba', price: 16000, icon: 'fa-fan' },
     
-    // FEMMES - CAFTANS (icône fa-fan)
+    // FEMMES - CAFTANS (icône caftan)
     { id: 20, name: 'Caftan femme', category: 'Femme', subcategory: 'Caftan', price: 24000, icon: 'fa-fan' },
 
-    // ENFANTS - BOUBOUS (icône fa-child)
+    // ENFANTS - BOUBOUS (icône enfant)
     { id: 21, name: 'Boubou enfant garçon', category: 'Enfant', subcategory: 'Boubou', price: 11000, icon: 'fa-child' },
     { id: 22, name: 'Boubou enfant fille', category: 'Enfant', subcategory: 'Boubou', price: 11000, icon: 'fa-child' },
     
-    // ENFANTS - JALABAS (icône fa-child)
+    // ENFANTS - JALABAS (icône enfant)
     { id: 23, name: 'Jallaba Enfant', category: 'Enfant', subcategory: 'Jalaba', price: 14000, icon: 'fa-child' },
     { id: 24, name: 'Jalaba enfant', category: 'Enfant', subcategory: 'Jalaba', price: 12000, icon: 'fa-child' },
     
-    // ENFANTS - ENSEMBLES (icône fa-child)
+    // ENFANTS - ENSEMBLES (icône enfant)
     { id: 25, name: 'Ensemble enfant', category: 'Enfant', subcategory: 'Ensemble', price: 15000, icon: 'fa-child' },
     { id: 26, name: 'Tenue enfant garçon', category: 'Enfant', subcategory: 'Ensemble', price: 13000, icon: 'fa-child' },
     { id: 27, name: 'Tenue enfant fille', category: 'Enfant', subcategory: 'Ensemble', price: 13000, icon: 'fa-child' }
