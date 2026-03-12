@@ -446,7 +446,7 @@
 
     .product-image {
       height: 220px;
-      background: linear-gradient(145deg, #f3ede8, #e9dfd7);
+      background: #e9dfd7; /* Couleur de fond uniforme */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -459,25 +459,11 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s;
+      display: block; /* S'assure que l'image est visible */
     }
 
     .product-card:hover .product-image img {
       transform: scale(1.05);
-    }
-
-    /* Fallback quand l'image ne charge pas */
-    .product-image .fallback-icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg, #f3ede8, #e9dfd7);
-      font-size: 60px;
-      color: var(--primary);
     }
 
     .product-details {
@@ -943,23 +929,6 @@
     .product-card {
       animation: fadeIn 0.5s ease-out;
     }
-
-    /* Style pour masquer les images par défaut */
-    .product-image img {
-      display: none;
-    }
-    
-    .product-image img.loaded {
-      display: block;
-    }
-    
-    .product-image .fallback-icon {
-      display: flex;
-    }
-    
-    .product-image img.loaded + .fallback-icon {
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -1148,7 +1117,8 @@
   ];
 
   // ===== 27 PRODUITS AVEC CHEMINS D'IMAGES =====
-  // IMPORTANT: Remplacez les noms de fichiers par les vôtres !
+  // IMPORTANT: Remplacez les noms de fichiers par les vôtres
+  // Les images doivent être dans le dossier "images" au même niveau que index.html
   const products = [
     // HOMMES - BOUBOUS
     { id: 1, name: 'Boubou homme brodé', category: 'Homme', subcategory: 'Boubou', price: 25000, image: 'boubou-homme-brode.jpg' },
@@ -1243,16 +1213,6 @@
     });
   };
 
-  // Fonction pour gérer le chargement des images
-  function handleImageLoad(img) {
-    img.classList.add('loaded');
-  }
-
-  function handleImageError(img) {
-    // L'icône de fallback s'affichera automatiquement
-    console.log('Image non trouvée:', img.src);
-  }
-
   // Fonction pour afficher les produits
   function displayProducts(filterCategory = null) {
     productsGrid.innerHTML = '';
@@ -1293,19 +1253,12 @@
       colorHtml += '</div>';
       
       // Construction du chemin d'accès à l'image
-      // IMPORTANT: Le chemin est relatif au fichier index.html
-      // Vos images doivent être dans : /images/nom-du-fichier.jpg
+      // Chemin relatif : dossier "images" au même niveau que index.html
       const imagePath = `images/${p.image}`;
       
       card.innerHTML = `
         <div class="product-image">
-          <img src="${imagePath}" 
-               alt="${p.name}"
-               onload="this.classList.add('loaded')"
-               onerror="this.style.display='none'">
-          <div class="fallback-icon">
-            <i class="fas ${p.category === 'Homme' ? 'fa-user-tie' : p.category === 'Femme' ? 'fa-fan' : 'fa-child'}"></i>
-          </div>
+          <img src="${imagePath}" alt="${p.name}">
         </div>
         <div class="product-details">
           <div class="product-category">${p.category} · ${p.subcategory || ''}</div>
@@ -1372,11 +1325,10 @@
     let html = '', total = 0;
     cart.forEach(i => {
       total += i.price;
-      const icon = i.category === 'Homme' ? 'fa-user-tie' : i.category === 'Femme' ? 'fa-fan' : 'fa-child';
       html += `
         <div class="cart-item">
           <div class="cart-item-image">
-            <img src="images/${i.image}" alt="${i.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas ${icon}\' style=\'font-size: 24px; color: var(--primary); display: flex; align-items: center; justify-content: center; height: 100%;\'></i>'">
+            <img src="images/${i.image}" alt="${i.name}">
           </div>
           <div class="cart-item-info">
             <div class="cart-item-title">${i.name}</div>
